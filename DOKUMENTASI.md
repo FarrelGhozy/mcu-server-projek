@@ -5,12 +5,17 @@
 ```
 Internet
     │
-    ├── Cloudflare (mcu.utc.web.id)
-    │     └── TCP Tunnel → localhost:1350
+    ├── Cloudflare Tunnel (remote managed)
+    │     ├── mcu.utc.web.id → TCP:8443  → Minecraft Server
+    │     └── admin.mcu.utc.web.id → HTTP:5000  → Dashboard
     │
-    └── Docker Container (minecraft-tlaucer-server)
-          └── Port: 1350 (host) → 25565 (container)
-                └── Minecraft Paper 26.1.2 (offline-mode)
+    ├── Docker Container: minecraft-tlaucer-server
+    │     └── Port: 8443 (host) → 25565 (container)
+    │           └── Minecraft Paper 26.1.2 (offline-mode)
+    │
+    └── Docker Container: minecraft-dashboard
+          └── Port: 5000 (host)
+                └── Flask Dashboard (Python)
 ```
 
 ## Spesifikasi
@@ -18,60 +23,44 @@ Internet
 | Item | Detail |
 |------|--------|
 | **Host** | Linux (Docker) |
-| **Container Image** | `itzg/minecraft-server:latest` |
+| **Container Minecraft** | `itzg/minecraft-server:latest` |
+| **Container Dashboard** | `python:3.12-slim` (Flask + Gunicorn) |
 | **Server Type** | Paper 26.1.2 |
 | **Memory** | 4GB (4096M) |
-| **Host Port** | 1350 |
-| **Container Port** | 25565 |
+| **Host Ports** | 8443 (Minecraft) · 5000 (Dashboard) |
 | **Mode** | Offline (Tlaucer) |
-| **Domain** | mcu.utc.web.id |
+| **Domain** | mcu.utc.web.id (Minecraft) |
+| **Dashboard** | admin.mcu.utc.web.id |
 | **Directory** | `/home/ghozy/Server-Tlaucer` |
 
 ## Management Commands
 
 ### Server Lifecycle
 ```bash
-# Start server
-cd /home/ghozy/Server-Tlaucer && docker compose up -d
+cd /home/ghozy/Server-Tlaucer
 
-# Stop server
+# Start all services
+docker compose up -d
+
+# Stop
 docker compose stop
 
-# Restart server
+# Restart
 docker compose restart
 
-# View logs (real-time)
-docker compose logs -f
+# Rebuild & start (after code changes)
+docker compose up -d --build
 
-# View last 50 lines
-docker compose logs --tail=50
+# View logs
+docker compose logs -f minecraft-server
+docker compose logs -f dashboard
+docker compose logs --tail=50 minecraft-server
 ```
 
 ### RCON Console
 ```bash
 docker compose exec minecraft-server rcon-cli
 ```
-Setelah masuk RCON, kamu bisa pakai commands berikut:
-
-| Command | Fungsi |
-|---------|--------|
-| `say <pesan>` | Broadcast pesan ke semua player |
-| `list` | Lihat player online |
-| `save-all` | Force save world |
-| `stop` | Stop server |
-| `op <player>` | Beri operator ke player |
-| `deop <player>` | Cabut operator |
-| `gamemode 0 <player>` | Survival mode |
-| `gamemode 1 <player>` | Creative mode |
-| `gamemode 2 <player>` | Adventure mode |
-| `gamemode 3 <player>` | Spectator mode |
-| `tp <player> <target>` | Teleport player |
-| `kick <player>` | Kick player |
-| `ban <player>` | Ban player |
-| `pardon <player>` | Unban player |
-| `whitelist add <player>` | Tambah ke whitelist |
-| `time set day/night` | Set waktu |
-| `weather clear/rain/thunder` | Set cuaca |
 
 **RCON Credentials:**
 - Password: `mcusiman123`
@@ -79,14 +68,15 @@ Setelah masuk RCON, kamu bisa pakai commands berikut:
 
 ### Monitoring
 ```bash
-# Resource usage
+# Container stats
 docker stats minecraft-tlaucer-server
 
-# Container status
-docker compose ps
+# Check ports
+ss -tlnp | grep -E "8443|5000"
 
-# Port check
-ss -tlnp | grep 1350
+# API test
+curl http://localhost:5000/api/status
+curl http://localhost:5000/api/health
 ```
 
 ## File Structure
@@ -104,18 +94,57 @@ ss -tlnp | grep 1350
 ├── plugins/                 # Plugin folder
 ├── logs/                    # Log files
 ├── backups/                 # Backup world
-└── bukkit.yml, spigot.yml, paper.yml, etc.
+└── dashboard/               # Dashboard aplikasi
+    ├── Dockerfile
+    ├── requirements.txt
+    ├── app.py               # Flask app
+    ├── templates/           # HTML templates
+    └── static/              # CSS & JS
 ```
+
+## Dashboard
+
+### Akses
+- **URL:** `https://admin.mcu.utc.web.id` (via Cloudflare Tunnel)
+- **Login:** `admin` / `admin123`
+- **Auto-refresh:** 5 detik (dashboard), 10 detik (logs)
+
+### Fitur
+| Halaman | URL | Auth | Fungsi |
+|---------|-----|------|--------|
+| Dashboard | `/` | Tidak | Status server, player, resource |
+| Logs | `/logs` | Tidak | Live logs dengan filter & search |
+| RCON | `/rcon` | Basic Auth | Kirim command ke server |
+| Backups | `/backups` | Basic Auth | List, create, delete backup |
+
+### API Endpoints
+| Endpoint | Method | Auth | Response |
+|----------|--------|------|----------|
+| `/api/status` | GET | Tidak | Server status, player, container stats |
+| `/api/logs?tail=50&level=&search=` | GET | Tidak | Log entries |
+| `/api/rcon` | POST | Basic Auth | Execute RCON command |
+| `/api/backups` | GET | Basic Auth | List backups |
+| `/api/backups` | POST | Basic Auth | Create backup |
+| `/api/backups/<name>` | DELETE | Basic Auth | Delete backup |
+| `/api/health` | GET | Tidak | Health check |
 
 ## Backup
 
-### Manual Backup
+### Via Dashboard
+1. Buka `admin.mcu.utc.web.id/backups`
+2. Klik **"Create Backup"**
+3. Backup tersimpan di `backups/` folder
+
+### Manual
 ```bash
 cd /home/ghozy/Server-Tlaucer
+docker compose stop
+# Backup world
 tar -czf backups/world-$(date +%Y%m%d-%H%M%S).tar.gz world
+docker compose up -d
 ```
 
-### Restore Backup
+### Restore
 ```bash
 cd /home/ghozy/Server-Tlaucer
 docker compose stop
@@ -127,7 +156,7 @@ docker compose up -d
 ### Auto Backup (Crontab)
 ```bash
 crontab -e
-# Tambah baris ini (backup jam 2 pagi setiap hari, hapus backup >7 hari):
+# Backup jam 2 pagi, hapus backup >7 hari:
 0 2 * * * cd /home/ghozy/Server-Tlaucer && tar -czf backups/world-$(date +\%Y\%m\%d).tar.gz world && find backups -name "world-*.tar.gz" -mtime +7 -delete
 ```
 
@@ -141,73 +170,69 @@ docker compose restart minecraft-server
 ```
 
 ### Via docker-compose.yml
-Edit environment di `docker-compose.yml`:
 ```yaml
 environment:
   PLUGINS: "https://url-plugin1.jar|https://url-plugin2.jar"
 ```
-Lalu:
-```bash
-docker compose up -d
-```
+Lalu rebuild: `docker compose up -d --build`
 
 ## Troubleshooting
 
-### Container restart terus?
+### Server tidak bisa start?
 ```bash
 docker compose logs minecraft-server --tail=50
 ```
-Cek error message, biasanya karena:
-- Kurang memory → naikkan `MEMORY` di `.env`
-- Port conflict → cek `ss -tlnp | grep 1350`
-- EULA belum diset → cek `eula.txt`
+
+### Dashboard error?
+```bash
+docker compose logs dashboard --tail=50
+```
 
 ### Player tidak bisa connect?
 ```bash
 # Cek port
-ss -tlnp | grep 1350
+ss -tlnp | grep 8443
 
-# Cek log server
+# Cek server log
 docker compose logs --tail=20 minecraft-server
 
-# Cek DNS
-nslookup mcu.utc.web.id
+# Cek tunnel
+sudo systemctl status cloudflared
 ```
 
-### Server lambat?
-- Naikkan alokasi memory di `docker-compose.yml`
-- Kurangi `max-players`
-- Set `view-distance=6` di `server.properties`
-- Tambah plugin performance (seperti Spark)
+### Container restart loop?
+- Naikkan memory di `.env`
+- Cek port conflict: `ss -tlnp | grep -E "8443|5000"`
 
 ## Cloudflare Tunnel
 
-### Setup via Dashboard
+Config dikelola via **Cloudflare Zero Trust Dashboard**:
 1. Buka [Cloudflare Dashboard](https://dash.cloudflare.com/) → **Zero Trust** → **Networks** → **Tunnels**
-2. Pilih tunnel yang sudah ada
-3. **Edit** → **Public Hostname** → **Add**
-4. Isi:
-   - Subdomain: `mcu`
-   - Domain: `utc.web.id`
-   - Service: `TCP` → `localhost:1350`
-5. **Save**
+2. Pilih tunnel → **Edit** → **Public Hostname**
+
+### Public Hostnames yang harus ada:
+| Hostname | Service | Tujuan |
+|----------|---------|--------|
+| `mcu.utc.web.id` | `tcp://localhost:8443` | Minecraft |
+| `admin.mcu.utc.web.id` | `http://localhost:5000` | Dashboard |
 
 ### Restart Tunnel
 ```bash
 sudo systemctl restart cloudflared
 ```
 
-### Cek Status Tunnel
+### Cek Status
 ```bash
 sudo systemctl status cloudflared
+sudo journalctl -u cloudflared -f  # Live logs
 ```
 
 ## Konfigurasi Penting
 
-### server.properties (sudah dioptimasi)
+### server.properties
 ```properties
-online-mode=false           # Offline mode untuk Tlaucer
-enforce-secure-profile=false # Penting untuk offline mode
+online-mode=false
+enforce-secure-profile=false
 server-port=25565
 enable-rcon=true
 rcon.password=mcusiman123
@@ -217,17 +242,43 @@ difficulty=normal
 gamemode=survival
 ```
 
+### docker-compose.yml
+```yaml
+services:
+  minecraft-server:
+    image: itzg/minecraft-server:latest
+    ports: ["8443:25565"]
+    environment:
+      EULA: "TRUE"
+      ONLINE_MODE: "false"
+      TYPE: "PAPER"
+      MEMORY: "4096M"
+      RCON_PASSWORD: "mcusiman123"
+    volumes: [".:/data"]
+
+  dashboard:
+    build: ./dashboard
+    ports: ["5000:5000"]
+    environment:
+      RCON_PASSWORD: "mcusiman123"
+      DASHBOARD_USER: "admin"
+      DASHBOARD_PASSWORD: "admin123"
+    volumes:
+      - .:/data:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+```
+
 ### Environment Variables
-| Variable | Value | Fungsi |
-|----------|-------|--------|
-| MEMORY | 4096M | Alokasi RAM |
-| TYPE | PAPER | Server type |
-| ONLINE_MODE | false | Offline mode |
-| ENABLE_RCON | true | Remote console |
+| Variable | Default | Fungsi |
+|----------|---------|--------|
+| MEMORY | 4096M | RAM Minecraft |
 | MAX_PLAYERS | 20 | Max player |
-| DIFFICULTY | 2 (normal) | Difficulty |
+| RCON_PASSWORD | mcusiman123 | Password RCON |
+| DASHBOARD_USER | admin | Login dashboard |
+| DASHBOARD_PASSWORD | admin123 | Password dashboard |
 
 ---
 
 **Dibuat:** Juni 2026
-**Domain:** mcu.utc.web.id:1350
+**Minecraft:** mcu.utc.web.id:8443
+**Dashboard:** admin.mcu.utc.web.id

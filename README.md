@@ -11,21 +11,16 @@ Selamat datang di **Tlaucer Minecraft Server**! Server ini menggunakan **offline
 ### Langkah-langkah
 
 1. **Download & Install Tlaucer Launcher**
-   - Kunjungi https://github.com/tlaucer/tlaucer-releases/releases
-   - Download versi terbaru untuk OS kamu
-
 2. **Buka Tlaucer Launcher**
 
 3. **Tambah Server Baru**
    ```
    Server Name: Tlaucer Server
    Server Address: mcu.utc.web.id
-   Port: 1350
+   Port: 8443
    ```
 
-4. **Masuk dengan Username Bebas**
-   - Kamu bisa pakai username apapun (offline mode)
-   - Contoh: `Player123`, `BuildMaster`, dll
+4. **Masuk dengan Username Bebas** (offline mode)
 
 5. **Klik Connect & Mulai Bermain!**
 
@@ -33,7 +28,7 @@ Selamat datang di **Tlaucer Minecraft Server**! Server ini menggunakan **offline
 | Info | Detail |
 |------|--------|
 | **Address** | `mcu.utc.web.id` |
-| **Port** | `1350` |
+| **Port** | `8443` |
 | **Version** | Minecraft **26.1.2** (Paper) |
 | **Mode** | Survival |
 | **Difficulty** | Normal |
@@ -60,5 +55,4 @@ Selamat datang di **Tlaucer Minecraft Server**! Server ini menggunakan **offline
 
 ---
 
-**Host:** mcu.utc.web.id:1350
-# mcu-server-projek
+**Host:** mcu.utc.web.id:8443
