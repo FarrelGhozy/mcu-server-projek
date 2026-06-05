@@ -11,7 +11,7 @@ Internet
     │
     ├── Docker Container: minecraft-tlaucer-server
     │     └── Port: 8443 (host) → 25565 (container)
-    │           └── Minecraft Paper 26.1.2 (offline-mode)
+    │                           └── Minecraft Paper 1.21.11 (offline-mode)
     │
     └── Docker Container: minecraft-dashboard
           └── Port: 5000 (host)
@@ -25,7 +25,7 @@ Internet
 | **Host** | Linux (Docker) |
 | **Container Minecraft** | `itzg/minecraft-server:latest` |
 | **Container Dashboard** | `python:3.12-slim` (Flask + Gunicorn) |
-| **Server Type** | Paper 26.1.2 |
+| **Server Type** | Paper 1.21.11 |
 | **Memory** | 4GB (4096M) |
 | **Host Ports** | 8443 (Minecraft) · 5000 (Dashboard) |
 | **Mode** | Offline (Tlaucer) |

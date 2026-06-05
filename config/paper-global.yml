@@ -51,6 +51,7 @@ collisions:
 commands:
   ride-command-allow-player-as-vehicle: false
   suggest-player-names-when-null-tab-completions: true
+  time-command-affects-all-worlds: false
 console:
   enable-brigadier-completions: true
   enable-brigadier-highlighting: true
@@ -66,6 +67,8 @@ item-validation:
   display-name: 8192
   lore-line: 8192
   resolve-selectors-in-books: false
+logging:
+  deobfuscate-stacktraces: true
 messages:
   kick:
     authentication-servers-down: <lang:multiplayer.disconnect.authservers_down>
@@ -134,6 +137,7 @@ unsupported-settings:
   allow-permanent-block-break-exploits: false
   allow-piston-duplication: false
   allow-unsafe-end-portal-teleportation: false
+  compression-format: ZLIB
   oversized-item-component-sanitizer:
     dont-sanitize: []
   perform-username-validation: true

@@ -8,7 +8,7 @@ services:
       EULA: "TRUE"
       ONLINE_MODE: "false"
       TYPE: "PAPER"
-      VERSION: "latest"
+      VERSION: "1.21.11"
       MEMORY: "4096M"
       JVM_OPTS: "-Xmx4096M -Xms2048M"
       DIFFICULTY: "2"
