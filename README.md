@@ -34,7 +34,7 @@ Selamat datang di **Tlaucer Minecraft Server**! Server ini menggunakan **offline
 |------|--------|
 | **Address** | `mcu.utc.web.id` |
 | **Port** | `1350` |
-| **Version** | Minecraft 26.1.2 (Paper) |
+| **Version** | Minecraft **26.1.2** (Paper) |
 | **Mode** | Survival |
 | **Difficulty** | Normal |
 | **Max Players** | 20 |

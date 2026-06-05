@@ -1,0 +1,42 @@
+# --- Minecraft Server ---
+world/
+world_nether/
+world_the_end/
+logs/
+*.log
+*.log.gz
+
+# --- Caches & Libraries ---
+cache/
+.cache/
+libraries/
+versions/
+*.jar
+
+# --- Backups ---
+backups/
+*.tar.gz
+
+# --- Environment & Secrets ---
+.env
+.paper.env
+.rcon-cli.env
+.rcon-cli.yaml
+
+# --- Auto-generated server files ---
+eula.txt
+usercache.json
+banned-ips.json
+banned-players.json
+whitelist.json
+ops.json
+session.lock
+*.dat
+*.dat_old
+
+# --- Plugin temp files ---
+plugins/*/tmp/
+
+# --- OS ---
+.DS_Store
+Thumbs.db
