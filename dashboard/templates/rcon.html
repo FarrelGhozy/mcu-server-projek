@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}RCON - Tlaucer Server{% endblock %}
+{% block content %}
+<div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+    <div class="lg:col-span-3 bg-mc-card rounded-lg border border-gray-700 p-4">
+        <h2 class="text-sm uppercase tracking-wide text-gray-400 mb-3">🎮 RCON Console</h2>
+        <div id="rcon-output" class="bg-black rounded p-3 h-96 overflow-y-auto font-mono text-xs leading-5 mb-3">
+            <span class="text-gray-500">// Welcome to RCON Console</span>
+        </div>
+        <form id="rcon-form" class="flex gap-2">
+            <input id="rcon-input" type="text" placeholder="Type a command..." class="flex-1 bg-gray-800 border border-gray-600 rounded px-3 py-2 text-sm">
+            <button type="submit" class="bg-mc-highlight text-white px-4 py-2 rounded text-sm hover:bg-red-700">Send</button>
+        </form>
+        <div class="text-xs text-gray-500 mt-2">
+            Commands: <code class="text-mc-highlight">list</code> ·
+            <code class="text-mc-highlight">say &lt;msg&gt;</code> ·
+            <code class="text-mc-highlight">save-all</code> ·
+            <code class="text-mc-highlight">op &lt;player&gt;</code> ·
+            <code class="text-mc-highlight">gamemode &lt;0-3&gt; &lt;player&gt;</code>
+        </div>
+    </div>
+
+    <div class="bg-mc-card rounded-lg border border-gray-700 p-4">
+        <h2 class="text-sm uppercase tracking-wide text-gray-400 mb-3">📖 Quick Commands</h2>
+        <div class="space-y-1 text-xs">
+            <button onclick="sendCommand('list')" class="w-full text-left bg-gray-800 hover:bg-gray-700 px-3 py-2 rounded">📋 List players</button>
+            <button onclick="sendCommand('save-all')" class="w-full text-left bg-gray-800 hover:bg-gray-700 px-3 py-2 rounded">💾 Save world</button>
+            <button onclick="sendCommand('say Server will restart in 5 minutes!')" class="w-full text-left bg-gray-800 hover:bg-gray-700 px-3 py-2 rounded">📢 Broadcast</button>
+            <button onclick="sendCommand('difficulty peaceful')" class="w-full text-left bg-gray-800 hover:bg-gray-700 px-3 py-2 rounded">🕊️ Peaceful mode</button>
+            <button onclick="sendCommand('difficulty normal')" class="w-full text-left bg-gray-800 hover:bg-gray-700 px-3 py-2 rounded">⚔️ Normal mode</button>
+            <button onclick="sendCommand('time set day')" class="w-full text-left bg-gray-800 hover:bg-gray-700 px-3 py-2 rounded">☀️ Set day</button>
+            <button onclick="sendCommand('time set night')" class="w-full text-left bg-gray-800 hover:bg-gray-700 px-3 py-2 rounded">🌙 Set night</button>
+            <button onclick="sendCommand('weather clear')" class="w-full text-left bg-gray-800 hover:bg-gray-700 px-3 py-2 rounded">☀️ Clear weather</button>
+            <button onclick="sendCommand('weather thunder')" class="w-full text-left bg-gray-800 hover:bg-gray-700 px-3 py-2 rounded">⛈️ Thunder</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}Dashboard - Tlaucer Server{% endblock %}
+{% block content %}
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+    <div class="bg-mc-card rounded-lg p-4 border border-gray-700">
+        <div class="text-gray-400 text-xs uppercase tracking-wide">Status</div>
+        <div id="status-badge" class="text-2xl font-bold mt-1">Loading...</div>
+    </div>
+    <div class="bg-mc-card rounded-lg p-4 border border-gray-700">
+        <div class="text-gray-400 text-xs uppercase tracking-wide">Players</div>
+        <div id="player-count" class="text-2xl font-bold mt-1">0</div>
+    </div>
+    <div class="bg-mc-card rounded-lg p-4 border border-gray-700">
+        <div class="text-gray-400 text-xs uppercase tracking-wide">Memory</div>
+        <div id="memory-usage" class="text-2xl font-bold mt-1">-</div>
+    </div>
+    <div class="bg-mc-card rounded-lg p-4 border border-gray-700">
+        <div class="text-gray-400 text-xs uppercase tracking-wide">World Size</div>
+        <div id="world-size" class="text-2xl font-bold mt-1">-</div>
+    </div>
+</div>
+
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+    <div class="lg:col-span-2 bg-mc-card rounded-lg border border-gray-700 p-4">
+        <h2 class="text-sm uppercase tracking-wide text-gray-400 mb-3">🟢 Online Players</h2>
+        <div id="player-list" class="text-sm text-gray-300">
+            <span class="text-gray-500 italic">Loading player data...</span>
+        </div>
+    </div>
+
+    <div class="bg-mc-card rounded-lg border border-gray-700 p-4">
+        <h2 class="text-sm uppercase tracking-wide text-gray-400 mb-3">📊 Resource Usage</h2>
+        <div class="space-y-3">
+            <div>
+                <div class="flex justify-between text-xs mb-1">
+                    <span>CPU</span>
+                    <span id="cpu-usage">-</span>
+                </div>
+                <div class="w-full bg-gray-700 rounded-full h-2">
+                    <div id="cpu-bar" class="bg-mc-highlight h-2 rounded-full" style="width:0%"></div>
+                </div>
+            </div>
+            <div>
+                <div class="flex justify-between text-xs mb-1">
+                    <span>RAM</span>
+                    <span id="ram-usage">-</span>
+                </div>
+                <div class="w-full bg-gray-700 rounded-full h-2">
+                    <div id="ram-bar" class="bg-blue-500 h-2 rounded-full" style="width:0%"></div>
+                </div>
+            </div>
+            <div class="text-xs text-gray-400 mt-3">
+                <div>Net I/O: <span id="net-io">-</span></div>
+                <div>PIDs: <span id="pids">-</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bg-mc-card rounded-lg border border-gray-700 p-4 mb-6">
+    <h2 class="text-sm uppercase tracking-wide text-gray-400 mb-3">📝 Recent Logs</h2>
+    <div id="recent-logs" class="text-xs text-gray-500 h-48 overflow-y-auto font-mono space-y-0.5">
+        <span class="italic">Loading logs...</span>
+    </div>
+</div>
+{% endblock %}

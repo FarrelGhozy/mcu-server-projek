@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Backups - Tlaucer Server{% endblock %}
+{% block content %}
+<div class="bg-mc-card rounded-lg border border-gray-700 p-4">
+    <div class="flex items-center justify-between mb-4">
+        <h2 class="text-sm uppercase tracking-wide text-gray-400">💾 World Backups</h2>
+        <button onclick="createBackup()" class="bg-green-700 text-white text-xs px-4 py-2 rounded hover:bg-green-600">+ Create Backup</button>
+    </div>
+
+    <div id="backup-status" class="hidden mb-3 text-sm"></div>
+
+    <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+            <thead>
+                <tr class="text-left text-gray-400 border-b border-gray-700">
+                    <th class="pb-2">File Name</th>
+                    <th class="pb-2">Size</th>
+                    <th class="pb-2">Date</th>
+                    <th class="pb-2">Action</th>
+                </tr>
+            </thead>
+            <tbody id="backup-list" class="divide-y divide-gray-800">
+                <tr><td colspan="4" class="text-center text-gray-500 py-8 italic">Loading backups...</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
