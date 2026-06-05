@@ -3,7 +3,7 @@ services:
     image: itzg/minecraft-server:latest
     container_name: minecraft-tlaucer-server
     ports:
-      - "1350:25565"
+      - "8443:25565"
     environment:
       EULA: "TRUE"
       ONLINE_MODE: "false"
