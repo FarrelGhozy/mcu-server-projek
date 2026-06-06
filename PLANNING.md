@@ -7,23 +7,25 @@
 [ Laptop Player 1 ] ───┐
 [ Laptop Player 2 ] ───┼── (Jaringan Lokal / Wi-Fi) ──► [ Ubuntu Server ]
 [ Laptop Player 3 ] ───┘                                   │
-                                                    ┌──────┴──────┐
-                                                    │ Vanilla 1.20.1 │
-                                                    │   + Forge     │
-                                                    └───────────────┘
+                                                     ┌───────────┐
+                                                     │ Forge 1.20.1 │
+                                                     │ + Mekanism  │
+                                                     └──────────────┘
 ```
 
 ### ✅ Sudah Berjalan
 - [x] Docker Compose setup
-- [x] Vanilla 1.20.1 + Forge
+- [x] Forge 1.20.1
 - [x] Port 25565 (Minecraft)
 - [x] RCON (port 25575)
 - [x] Offline-mode (Tlaucher)
 - [x] Clean start (world baru)
 - [x] Folder `mods/` siap pakai
+- [x] Mekanism (Core + Generators + Tools)
+- [x] Architectury API + Cloth Config API (dependensi)
 
 ### 📌 Rencana Selanjutnya (bertahap)
-- [ ] Tambah mod-mod sesuai kebutuhan
+- [ ] Tambah mod-mod lain sesuai kebutuhan
 - [ ] Optimasi performa (kalau ada lag)
 - [ ] Whitelist / permission system
 - [ ] Backup otomatis (cron job)
