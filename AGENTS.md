@@ -1,45 +1,32 @@
-# AGENTS.md — Minecraft Tlaucer Server
+# AGENTS.md — Minecraft Home Server (Tlaucer)
 
 ## Project Info
-- **Server:** Minecraft Paper (offline-mode/Tlaucer)
+- **Server:** Minecraft Vanilla 1.20.1 + Forge (offline-mode/Tlaucer)
 - **Setup:** Docker Compose
-- **Ports:** 8443 (Minecraft) · 5000 (Dashboard)
-- **Domain:** mcu.utc.web.id
-- **Dashboard:** admin.mcu.utc.web.id (via Cloudflare Tunnel)
+- **Port:** 25565 (Minecraft) · 25575 (RCON)
+- **Akses:** IP Lokal Server (contoh: `192.168.x.x:25565`)
 - **Directory:** `/home/ghozy/Server-Tlaucer`
 - **Memory:** 4GB (4096M)
 
 ## Commands
 
-### Start All Services
-```bash
-cd /home/ghozy/Server-Tlaucer
-docker compose up -d
-docker compose logs -f
-```
-
 ### Start / Stop / Restart
 ```bash
-docker compose up -d       # Start
-docker compose stop        # Stop
-docker compose restart     # Restart
-docker compose up -d --build  # Rebuild & start (after code changes)
+docker compose up -d             # Start
+docker compose stop               # Stop
+docker compose restart            # Restart
+docker compose up -d --build      # Rebuild & start (after config changes)
 ```
 
 ### View Logs
 ```bash
-docker compose logs -f minecraft-server   # Minecraft logs
-docker compose logs -f dashboard          # Dashboard logs
+docker compose logs -f minecraft-server
 docker compose logs --tail=50 minecraft-server
 ```
 
 ### RCON Console
 ```bash
-# Via CLI
 docker compose exec minecraft-server rcon-cli
-
-# Via Dashboard
-# Buka admin.mcu.utc.web.id/rcon di browser (login: admin / admin123)
 ```
 
 Useful RCON commands:
@@ -54,54 +41,33 @@ Useful RCON commands:
 
 ### Resource Monitor
 ```bash
-docker stats minecraft-tlaucer-server
-# Atau lihat di Dashboard (admin.mcu.utc.web.id)
+docker stats minecraft-home-server
 ```
 
 ### Backup World
 ```bash
-# Manual
 tar -czf backups/world-$(date +%Y%m%d-%H%M%S).tar.gz world
-
-# Via Dashboard
-# Buka admin.mcu.utc.web.id/backups → klik "Create Backup"
 ```
 
-### Add Plugin
+### Add Mod
 ```bash
-wget <plugin-url> -O plugins/<plugin-name>.jar
+# Taruh file .jar mod Forge 1.20.1 di folder mods/
+cp /path/to/mod.jar /home/ghozy/Server-Tlaucer/mods/
 docker compose restart minecraft-server
-```
-
-### Dashboard API (internal)
-```bash
-curl http://localhost:5000/api/status      # JSON status
-curl http://localhost:5000/api/logs        # JSON logs
-curl http://localhost:5000/api/health      # Health check
 ```
 
 ## RCON Info
 - **Password:** mcusiman123
 - **Port:** 25575 (internal container)
-- **Function:** Remote console via CLI atau Dashboard
-
-## Dashboard Info
-- **URL:** admin.mcu.utc.web.id
-- **Login:** admin / admin123
-- **Fitur:** Status server, player list, live logs, RCON console, backup manager
-- **Auto-refresh:** 5 detik (dashboard), 10 detik (logs)
-
-## Cloudflare Tunnel
-Config di Cloudflare Zero Trust Dashboard (remote managed):
-```yaml
-Public Hostnames:
-  - mcu.utc.web.id → tcp://localhost:8443   # Minecraft
-  - admin.mcu.utc.web.id → http://localhost:5000  # Dashboard
-```
+- **Function:** Remote console via CLI
 
 ## Connection Info
-- **Minecraft:** `mcu.utc.web.id:8443` (Tlaucer, offline mode)
-- **Dashboard:** `https://admin.mcu.utc.web.id` (browser)
+- **Minecraft:** `{IP_SERVER}:25565` (Tlaucer, offline mode)
+- Cek IP server: `ip a | grep 192.168`
 
-## Environment File
-File `.env` berisi konfigurasi yang bisa diubah tanpa edit docker-compose.yml.
+## Catatan Penting
+- Server ini untuk **jaringan lokal** — semua pemain harus dalam Wi-Fi/network yang sama
+- Setiap client **wajib pasang mod yang sama** di folder `.minecraft/mods/`
+- Mod hanya untuk Forge **1.20.1** — cek kompatibilitas sebelum download
+- File `.env` berisi konfigurasi yang bisa diubah tanpa edit docker-compose.yml
+- Server akan terus berkembang — dokumentasi akan diupdate bertahap
