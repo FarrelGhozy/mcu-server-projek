@@ -10,7 +10,7 @@
                                                      │ Forge 1.20.1    │
                                                      │ + Mekanism      │
                                                      │ + JEI           │
-                                                     │ + VeinMiner     │
+                                                      │ + Veinst     │
                                                      └─────────────────┘
 ```
 
@@ -20,12 +20,12 @@
 |------|--------|
 | **Host** | Linux (Docker) |
 | **Container** | `itzg/minecraft-server:latest` |
-| **Server Type** | Forge 1.20.1 + Mekanism + JEI + VeinMiner |
+| **Server Type** | Forge 1.20.1 + Mekanism + JEI + Veinst |
 | **Memory** | 4GB (4096M) |
 | **Port** | 25565 (Minecraft) |
 | **Mode** | Offline (Tlaucer) |
 | **Directory** | `/home/ghozy/Server-Tlaucer` |
-| **Mods** | Mekanism + Generators + Tools + JEI + VeinMiner |
+| **Mods** | Mekanism + Generators + Tools + JEI + Veinst |
 
 ## Management Commands
 
@@ -83,7 +83,7 @@ ss -tlnp | grep 25565
 │   ├── architectury-9.2.14-forge.jar
 │   ├── cloth-config-11.1.136-forge.jar
 │   ├── jei-1.20.1-forge-15.20.0.130.jar
-│   └── veinminer-1.1.0.jar
+│   └── veinst_veinminer-1.3.0-1.20.1.jar
 ├── config/                  # Config mod (auto-generated)
 ├── defaultconfigs/          # Default config mod
 ├── libraries/               # Library Forge
@@ -192,6 +192,18 @@ ss -tlnp | grep 25565
 # Cek server log
 docker compose logs --tail=20 minecraft-server
 ```
+
+### Cara Pakai Mod
+
+**Veinst VeinMiner**:
+- **Sneak (Shift) + mine** — vein mining langsung tanpa enchant
+- Support batu, ore, kayu, dan semua block
+- Bisa diatur via `/veinst` atau config file
+
+**JEI** (Just Enough Items):
+- `R` = lihat recipe item
+- `U` = lihat kegunaan item
+- Search bar di kiri untuk cari item
 
 ### Mod tidak terload?
 - Cek log: `docker compose logs minecraft-server | grep -i error`

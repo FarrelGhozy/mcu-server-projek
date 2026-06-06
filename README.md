@@ -1,6 +1,6 @@
 # Minecraft Home Server — Tlaucer
 
-Selamat datang di server Minecraft lokal! Server ini pakai **Forge 1.20.1 + Mekanism + JEI + VeinMiner**. Semua pemain harus pasang mod yang sama biar bisa join.
+Selamat datang di server Minecraft lokal! Server ini pakai **Forge 1.20.1 + Mekanism + JEI + Veinst VeinMiner**. Semua pemain harus pasang mod yang sama biar bisa join.
 
 ## Cara Join
 
@@ -28,11 +28,23 @@ Download semua file `.jar` berikut, lalu pindahkan ke folder `mods` di laptop ka
 | **Architectury API** | `architectury-9.2.14-forge.jar` | [Download](https://cdn.modrinth.com/data/lhGA9TYQ/versions/1MKTLiiG/architectury-9.2.14-forge.jar) |
 | **Cloth Config API** | `cloth-config-11.1.136-forge.jar` | [Download](https://cdn.modrinth.com/data/9s6osm5g/versions/t8TXrZvZ/cloth-config-11.1.136-forge.jar) |
 | **JEI** | `jei-1.20.1-forge-15.20.0.130.jar` | [Download](https://cdn.modrinth.com/data/u6dRKJwZ/versions/RTFeXsvE/jei-1.20.1-forge-15.20.0.130.jar) |
-| **VeinMiner** | `veinminer-1.1.0.jar` | [Download](https://cdn.modrinth.com/data/OhduvhIc/versions/XmveddzV/veinminer-1.1.0.jar) |
+| **Veinst VeinMiner** | `veinst_veinminer-1.3.0-1.20.1.jar` | [Download](https://edge.forgecdn.net/files/8128/571/veinst_veinminer-1.3.0-1.20.1.jar) |
 
 > **Wajib download SEMUA file di atas.** Kalo kurang satu, game bisa crash atau koneksi ditolak.
 
-### 3. Join Server
+### 3. Cara Pakai Mod Penting
+
+**Veinst VeinMiner**:
+- **Sneak (Shift) + mine** — langsung vein mining tanpa perlu enchant
+- Support batu, ore, kayu, dan block lain
+- Bisa diatur via config / command `/veinst`
+
+**JEI** (Just Enough Items):
+- Tekan `R` di atas item untuk lihat recipe
+- Tekan `U` di atas item untuk lihat kegunaan
+- Bisa nyari item di panel kiri
+
+### 4. Join Server
 1. Buka Minecraft dari TLauncher (pastiin pilih **Forge 1.20.1**)
 2. Multiplayer → Direct Connection
 3. Masukkan alamat server: **`192.168.9.200:25565`**
@@ -47,7 +59,7 @@ Download semua file `.jar` berikut, lalu pindahkan ke folder `mods` di laptop ka
 | **Difficulty** | Normal |
 | **Max Players** | 20 |
 | **PVP** | Aktif |
-| **Mods** | Mekanism + Generators + Tools + JEI + VeinMiner |
+| **Mods** | Mekanism + Generators + Tools + JEI + Veinst |
 
 ### Aturan Server
 1. Jangan cheat / x-ray

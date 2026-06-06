@@ -11,7 +11,7 @@
                                                       │ Forge 1.20.1    │
                                                       │ + Mekanism      │
                                                       │ + JEI           │
-                                                      │ + VeinMiner     │
+                                                      │ + Veinst        │
                                                       └─────────────────┘
 ```
 
@@ -26,10 +26,10 @@
 - [x] Mekanism (Core + Generators + Tools)
 - [x] Architectury API + Cloth Config API (dependensi)
 - [x] JEI (Just Enough Items)
-- [x] VeinMiner (All-in-one)
+- [x] Veinst VeinMiner (shift + mine)
 
 ### 📌 Rencana Selanjutnya (bertahap)
-- [ ] Tambah mod-mod lain sesuai kebutuhan (sudah: Mekanism, JEI, VeinMiner)
+- [ ] Tambah mod-mod lain sesuai kebutuhan (sudah: Mekanism, JEI, Veinst)
 - [ ] Optimasi performa (kalau ada lag)
 - [ ] Whitelist / permission system
 - [ ] Backup otomatis (cron job)
