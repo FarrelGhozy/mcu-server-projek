@@ -29,15 +29,25 @@ Download semua file `.jar` berikut, lalu pindahkan ke folder `mods` di laptop ka
 | **Cloth Config API** | `cloth-config-11.1.136-forge.jar` | [Download](https://cdn.modrinth.com/data/9s6osm5g/versions/t8TXrZvZ/cloth-config-11.1.136-forge.jar) |
 | **JEI** | `jei-1.20.1-forge-15.20.0.130.jar` | [Download](https://cdn.modrinth.com/data/u6dRKJwZ/versions/RTFeXsvE/jei-1.20.1-forge-15.20.0.130.jar) |
 | **Veinst VeinMiner** | `veinst_veinminer-1.3.0-1.20.1.jar` | [Download](https://edge.forgecdn.net/files/8128/571/veinst_veinminer-1.3.0-1.20.1.jar) |
+| **JourneyMap** | `journeymap-1.20.1-5.10.3-forge.jar` | [Download](https://cdn.modrinth.com/data/lfHFW1mp/versions/r7FWVNCs/journeymap-1.20.1-5.10.3-forge.jar) |
 
 > **Wajib download SEMUA file di atas.** Kalo kurang satu, game bisa crash atau koneksi ditolak.
+>
+> **LightAura** (client-only — optional, tidak perlu di server) | `LightAura-8.2.0.jar` | [Download](https://cdn.modrinth.com/data/MNQ8PfgX/versions/Aa16E33Q/LightAura-8.2.0.jar)
 
 ### 3. Cara Pakai Mod Penting
 
 **Veinst VeinMiner**:
-- **Sneak (Shift) + mine** — langsung vein mining tanpa perlu enchant
+- **Controls → Key Binds → Cari "Veinminer" → Set "Veinminer Key"** (misal: `V`, `G`, atau `~`)
+- **Hold tombol itu + mine** untuk vein mining semua blok yang nyambung
 - Support batu, ore, kayu, dan block lain
-- Bisa diatur via config / command `/veinst`
+- Bisa buka menu setting via tombol "Veinminer Menu Key"
+
+**JourneyMap**:
+- Tekan `J` — buka fullscreen map
+- Tekan `B` — set waypoint di lokasi saat ini
+- Minimap otomatis muncul di pojok atas kanan
+- Lihat posisi teman di peta (real-time)
 
 **JEI** (Just Enough Items):
 - Tekan `R` di atas item untuk lihat recipe
@@ -59,7 +69,7 @@ Download semua file `.jar` berikut, lalu pindahkan ke folder `mods` di laptop ka
 | **Difficulty** | Normal |
 | **Max Players** | 20 |
 | **PVP** | Aktif |
-| **Mods** | Mekanism + Generators + Tools + JEI + Veinst |
+| **Mods** | Mekanism + Generators + Tools + JEI + Veinst + JourneyMap |
 
 ### Aturan Server
 1. Jangan cheat / x-ray

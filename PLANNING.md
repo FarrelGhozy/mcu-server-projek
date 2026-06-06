@@ -12,7 +12,7 @@
                                                       │ + Mekanism      │
                                                       │ + JEI           │
                                                       │ + Veinst        │
-                                                      └─────────────────┘
+                                                       └─────────────────┘
 ```
 
 ### ✅ Sudah Berjalan
@@ -26,10 +26,12 @@
 - [x] Mekanism (Core + Generators + Tools)
 - [x] Architectury API + Cloth Config API (dependensi)
 - [x] JEI (Just Enough Items)
-- [x] Veinst VeinMiner (shift + mine)
+- [x] Veinst VeinMiner (bind key di Controls)
+- [x] JourneyMap (minimap + waypoint)
+- [x] Fix world corruption (hapus ref datapack mr_veinminer/veinmining/spectrelib)
 
 ### 📌 Rencana Selanjutnya (bertahap)
-- [ ] Tambah mod-mod lain sesuai kebutuhan (sudah: Mekanism, JEI, Veinst)
+- [ ] Tambah mod lain (client: LightAura sebagai client-only mod)
 - [ ] Optimasi performa (kalau ada lag)
 - [ ] Whitelist / permission system
 - [ ] Backup otomatis (cron job)

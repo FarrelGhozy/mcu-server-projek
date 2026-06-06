@@ -1,7 +1,7 @@
 # AGENTS.md — Minecraft Home Server (Tlaucer)
 
 ## Project Info
-- **Server:** Minecraft Forge 1.20.1 + Mekanism + JEI + Veinst VeinMiner (offline-mode/Tlaucer)
+- **Server:** Minecraft Forge 1.20.1 + Mekanism + JEI + Veinst VeinMiner + JourneyMap (offline-mode/Tlaucer)
 - **Setup:** Docker Compose
 - **Port:** 25565 (Minecraft) · 25575 (RCON)
 - **Akses:** IP Lokal Server (contoh: `192.168.x.x:25565`)

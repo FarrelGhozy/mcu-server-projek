@@ -11,7 +11,7 @@
                                                      │ + Mekanism      │
                                                      │ + JEI           │
                                                       │ + Veinst     │
-                                                     └─────────────────┘
+                                                      └─────────────────┘
 ```
 
 ## Spesifikasi
@@ -20,12 +20,14 @@
 |------|--------|
 | **Host** | Linux (Docker) |
 | **Container** | `itzg/minecraft-server:latest` |
-| **Server Type** | Forge 1.20.1 + Mekanism + JEI + Veinst |
+| **Server Type** | Forge 1.20.1 + Mekanism + JEI + Veinst + JourneyMap |
 | **Memory** | 4GB (4096M) |
 | **Port** | 25565 (Minecraft) |
 | **Mode** | Offline (Tlaucer) |
 | **Directory** | `/home/ghozy/Server-Tlaucer` |
-| **Mods** | Mekanism + Generators + Tools + JEI + Veinst |
+| **Mods** | Mekanism + Generators + Tools + JEI + Veinst + JourneyMap |
+
+## Management Commands
 
 ## Management Commands
 
@@ -83,7 +85,8 @@ ss -tlnp | grep 25565
 │   ├── architectury-9.2.14-forge.jar
 │   ├── cloth-config-11.1.136-forge.jar
 │   ├── jei-1.20.1-forge-15.20.0.130.jar
-│   └── veinst_veinminer-1.3.0-1.20.1.jar
+│   ├── veinst_veinminer-1.3.0-1.20.1.jar
+│   └── journeymap-1.20.1-5.10.3-forge.jar
 ├── config/                  # Config mod (auto-generated)
 ├── defaultconfigs/          # Default config mod
 ├── libraries/               # Library Forge
@@ -196,14 +199,25 @@ docker compose logs --tail=20 minecraft-server
 ### Cara Pakai Mod
 
 **Veinst VeinMiner**:
-- **Sneak (Shift) + mine** — vein mining langsung tanpa enchant
+- **Controls → Key Binds → Cari "Veinminer" → Set "Veinminer Key"** (misal: `V`, `G`, `~`)
+- **Hold tombol itu + mine** — vein mining tanpa enchant
 - Support batu, ore, kayu, dan semua block
-- Bisa diatur via `/veinst` atau config file
+- Bisa diatur via tombol "Veinminer Menu Key"
+
+**JourneyMap**:
+- Tekan `J` — fullscreen map
+- Tekan `B` — set waypoint
+- Minimap pojok kanan atas (otomatis)
+- Lihat posisi teman di peta
 
 **JEI** (Just Enough Items):
 - `R` = lihat recipe item
 - `U` = lihat kegunaan item
 - Search bar di kiri untuk cari item
+
+**LightAura** (client-only):
+- Pasang di laptop masing-masing (tidak di server)
+- Otomatis: cahaya sekitar player di kegelapan
 
 ### Mod tidak terload?
 - Cek log: `docker compose logs minecraft-server | grep -i error`
