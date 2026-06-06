@@ -1,14 +1,14 @@
 services:
   minecraft-server:
     image: itzg/minecraft-server:latest
-    container_name: minecraft-tlaucer-server
+    container_name: minecraft-home-server
     ports:
-      - "8443:25565"
+      - "25565:25565"
     environment:
       EULA: "TRUE"
       ONLINE_MODE: "false"
-      TYPE: "PAPER"
-      VERSION: "1.21.11"
+      TYPE: "VANILLA"
+      VERSION: "1.20.1"
       MEMORY: "4096M"
       JVM_OPTS: "-Xmx4096M -Xms2048M"
       DIFFICULTY: "2"
@@ -21,22 +21,4 @@ services:
       RCON_PORT: "25575"
     volumes:
       - /home/ghozy/Server-Tlaucer:/data
-    restart: unless-stopped
-
-  dashboard:
-    build: ./dashboard
-    container_name: minecraft-dashboard
-    ports:
-      - "5000:5000"
-    environment:
-      RCON_HOST: "minecraft-server"
-      RCON_PORT: 25575
-      RCON_PASSWORD: "mcusiman123"
-      DASHBOARD_USER: "admin"
-      DASHBOARD_PASSWORD: "admin123"
-    volumes:
-      - /home/ghozy/Server-Tlaucer:/data:ro
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-    depends_on:
-      - minecraft-server
     restart: unless-stopped
