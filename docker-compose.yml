@@ -7,7 +7,7 @@ services:
     environment:
       EULA: "TRUE"
       ONLINE_MODE: "false"
-      TYPE: "VANILLA"
+      TYPE: "FORGE"
       VERSION: "1.20.1"
       MEMORY: "4096M"
       JVM_OPTS: "-Xmx4096M -Xms2048M"
