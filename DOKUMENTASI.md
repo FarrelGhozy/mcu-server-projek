@@ -6,10 +6,12 @@
 [ Laptop Player 1 ] ───┐
 [ Laptop Player 2 ] ───┼── (Jaringan Lokal / Wi-Fi) ──► [ Ubuntu Server ]
 [ Laptop Player 3 ] ───┘                                   │
-                                                    ┌──────┴──────┐
-                                                    │ Forge 1.20.1 │
-                                                    │ + Mekanism   │
-                                                    └───────────────┘
+                                                     ┌─────────────────┐
+                                                     │ Forge 1.20.1    │
+                                                     │ + Mekanism      │
+                                                     │ + JEI           │
+                                                     │ + VeinMiner     │
+                                                     └─────────────────┘
 ```
 
 ## Spesifikasi
@@ -18,12 +20,12 @@
 |------|--------|
 | **Host** | Linux (Docker) |
 | **Container** | `itzg/minecraft-server:latest` |
-| **Server Type** | Forge 1.20.1 + Mekanism |
+| **Server Type** | Forge 1.20.1 + Mekanism + JEI + VeinMiner |
 | **Memory** | 4GB (4096M) |
 | **Port** | 25565 (Minecraft) |
 | **Mode** | Offline (Tlaucer) |
 | **Directory** | `/home/ghozy/Server-Tlaucer` |
-| **Mods** | Mekanism + Generators + Tools |
+| **Mods** | Mekanism + Generators + Tools + JEI + VeinMiner |
 
 ## Management Commands
 
@@ -79,7 +81,9 @@ ss -tlnp | grep 25565
 │   ├── MekanismGenerators-1.20.1-10.4.16.80.jar
 │   ├── MekanismTools-1.20.1-10.4.16.80.jar
 │   ├── architectury-9.2.14-forge.jar
-│   └── cloth-config-11.1.136-forge.jar
+│   ├── cloth-config-11.1.136-forge.jar
+│   ├── jei-1.20.1-forge-15.20.0.130.jar
+│   └── veinminer-1.1.0.jar
 ├── config/                  # Config mod (auto-generated)
 ├── defaultconfigs/          # Default config mod
 ├── libraries/               # Library Forge

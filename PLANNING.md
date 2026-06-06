@@ -7,10 +7,12 @@
 [ Laptop Player 1 ] ───┐
 [ Laptop Player 2 ] ───┼── (Jaringan Lokal / Wi-Fi) ──► [ Ubuntu Server ]
 [ Laptop Player 3 ] ───┘                                   │
-                                                     ┌───────────┐
-                                                     │ Forge 1.20.1 │
-                                                     │ + Mekanism  │
-                                                     └──────────────┘
+                                                      ┌─────────────────┐
+                                                      │ Forge 1.20.1    │
+                                                      │ + Mekanism      │
+                                                      │ + JEI           │
+                                                      │ + VeinMiner     │
+                                                      └─────────────────┘
 ```
 
 ### ✅ Sudah Berjalan
@@ -23,9 +25,11 @@
 - [x] Folder `mods/` siap pakai
 - [x] Mekanism (Core + Generators + Tools)
 - [x] Architectury API + Cloth Config API (dependensi)
+- [x] JEI (Just Enough Items)
+- [x] VeinMiner (All-in-one)
 
 ### 📌 Rencana Selanjutnya (bertahap)
-- [ ] Tambah mod-mod lain sesuai kebutuhan
+- [ ] Tambah mod-mod lain sesuai kebutuhan (sudah: Mekanism, JEI, VeinMiner)
 - [ ] Optimasi performa (kalau ada lag)
 - [ ] Whitelist / permission system
 - [ ] Backup otomatis (cron job)

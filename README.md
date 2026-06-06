@@ -1,6 +1,6 @@
 # Minecraft Home Server — Tlaucer
 
-Selamat datang di server Minecraft lokal! Server ini pakai **Forge 1.20.1 + Mekanism**. Semua pemain harus pasang mod yang sama biar bisa join.
+Selamat datang di server Minecraft lokal! Server ini pakai **Forge 1.20.1 + Mekanism + JEI + VeinMiner**. Semua pemain harus pasang mod yang sama biar bisa join.
 
 ## Cara Join
 
@@ -27,6 +27,8 @@ Download semua file `.jar` berikut, lalu pindahkan ke folder `mods` di laptop ka
 | **Mekanism Tools** | `MekanismTools-1.20.1-10.4.16.80.jar` | [Download](https://cdn.modrinth.com/data/tqQpq1lt/versions/VzpFbUpF/MekanismTools-1.20.1-10.4.16.80.jar) |
 | **Architectury API** | `architectury-9.2.14-forge.jar` | [Download](https://cdn.modrinth.com/data/lhGA9TYQ/versions/1MKTLiiG/architectury-9.2.14-forge.jar) |
 | **Cloth Config API** | `cloth-config-11.1.136-forge.jar` | [Download](https://cdn.modrinth.com/data/9s6osm5g/versions/t8TXrZvZ/cloth-config-11.1.136-forge.jar) |
+| **JEI** | `jei-1.20.1-forge-15.20.0.130.jar` | [Download](https://cdn.modrinth.com/data/u6dRKJwZ/versions/RTFeXsvE/jei-1.20.1-forge-15.20.0.130.jar) |
+| **VeinMiner** | `veinminer-1.1.0.jar` | [Download](https://cdn.modrinth.com/data/OhduvhIc/versions/XmveddzV/veinminer-1.1.0.jar) |
 
 > **Wajib download SEMUA file di atas.** Kalo kurang satu, game bisa crash atau koneksi ditolak.
 
@@ -45,7 +47,7 @@ Download semua file `.jar` berikut, lalu pindahkan ke folder `mods` di laptop ka
 | **Difficulty** | Normal |
 | **Max Players** | 20 |
 | **PVP** | Aktif |
-| **Mods** | Mekanism + Generators + Tools |
+| **Mods** | Mekanism + Generators + Tools + JEI + VeinMiner |
 
 ### Aturan Server
 1. Jangan cheat / x-ray
