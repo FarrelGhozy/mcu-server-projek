@@ -1,6 +1,6 @@
 # Minecraft Home Server — Tlaucer
 
-Selamat datang di server Minecraft lokal! Server ini pakai **Forge 1.20.1 + Mekanism + JEI + Veinst VeinMiner**. Semua pemain harus pasang mod yang sama biar bisa join.
+Selamat datang di server Minecraft lokal! Server ini pakai **Forge 1.20.1 + Mekanism + JEI + Veinst VeinMiner + GraveStone**. Semua pemain harus pasang mod yang sama biar bisa join.
 
 ## Cara Join
 
@@ -10,13 +10,28 @@ Selamat datang di server Minecraft lokal! Server ini pakai **Forge 1.20.1 + Meka
 - (Opsional) Bisa pilih **ForgeOptiFine 1.20.1** biar lebih ringan
 
 ### 2. Download & Pasang Mod
-Download semua file `.jar` berikut, lalu pindahkan ke folder `mods` di laptop kamu.
+Download semua file `.jar` berikut, lalu pindahkan ke folder `mods` di laptop kamu. Ada **2 cara**: otomatis (disarankan) atau manual.
+
+#### 🚀 Cara A — Otomatis: pakai script dari repo
+Repo ini berisi script buat **download SEMUA mod sekaligus** dari link resmi (Modrinth/CurseForge):
+
+| OS | Script | Cara pakai |
+|---|---|---|
+| **Linux / macOS** | `download_mod.sh` | `bash download_mod.sh` |
+| **Windows** | `download_mod.bat` | klik 2×, atau ketik `download_mod.bat` di cmd |
+
+**Cara pakai:**
+- **Windows** → copy `download_mod.bat` ke folder mana saja → **klik 2×**. Script otomatis bikin folder `mods/` di sebelahnya & download semua mod ke situ. Butuh `curl` (udah bawaan Windows 10/11; kalau gak ada, script otomatis pakai PowerShell).
+- **Linux** → copy `download_mod.sh` → `bash download_mod.sh`. File ke-download ke folder `mods/` di folder script. Mau taruh di folder lain? `bash download_mod.sh /path/folder`.
+- Script nunjuk status tiap mod (`OK`/`GAGAL`). Setelah semua OK, pindahin file ke folder `mods` TLauncher (langkah di bawah).
 
 **Cara akses folder mods:**
 1. Buka TLauncher
 2. Klik ikon folder () di pojok kanan bawah
 3. Cari folder **`mods`** (buat baru kalo belum ada)
-4. Copy semua file `.jar` ke dalam folder `mods/`
+4. Copy semua file `.jar` dari hasil script ke dalam folder `mods/`
+
+#### 🐢 Cara B — Manual: download satu-satu
 
 **Download Links (Forge 1.20.1):**
 

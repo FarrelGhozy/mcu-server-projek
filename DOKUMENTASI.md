@@ -217,6 +217,25 @@ Lalu: `docker compose restart minecraft-server`
 
 > Kode warna bisa digabung, contoh: `§l§a` = hijau tebal. Setiap ganti icon/MOTD wajib restart server biar kebaca.
 
+## Script Download Mod (Otomatis)
+
+Cara paling gampang buat client/pemain pasang mod — tinggal jalanin 1 script, semua mod ke-download dari link resmi ke folder tujuan.
+
+| OS | Script | Perintah |
+|---|---|---|
+| **Linux / macOS** | `download_mod.sh` | `bash download_mod.sh` (folder kustom: `bash download_mod.sh /path/ke/folder`) |
+| **Windows** | `download_mod.bat` | klik 2× / di cmd: `download_mod.bat` (folder kustom: `download_mod.bat C:\\path\\folder`) |
+
+**Cara kerja & syarat:**
+- Script bikin folder `mods/` (di folder script kalau gak dikasih argumen) lalu **download 9 mod** (Mekanism Core/Generators/Tools, Architectury, Cloth, JEI, Veinst, JourneyMap, GraveStone) dari Modrinth/CurseForge resmi. LightAura bukan ikut (client-only opsional — download manual dari README).
+- **Windows**: butuh `curl` (bawaan Windows 10/11). Kalau `curl` gak ada, script otomatis fallback ke PowerShell `Invoke-WebRequest`.
+- **Linux**: butuh `curl`. Debian/Ubuntu: `sudo apt install curl`.
+- Validasi otomatis: file yang akhirnya ke-download harus >100KB dan dikasih status `OK`, selain itu `GAGAL` + file bersih (dihapus).
+- Github Actions / CI bisa pakai `download_mod.sh` untuk auto-fetch versi mod ke folder `mods/` server.
+
+### Cara pakai manual (tanpa script)
+Download `.jar` satu-satu dari link di README (`## Download Links`) → taruh di folder `mods` TLauncher (lihat langkah "Cara akses folder mods").
+
 ## Menambah Mod Baru
 
 1. Download file `.jar` mod Forge 1.20.1 dari CurseForge/Modrinth
