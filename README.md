@@ -83,6 +83,8 @@ Repo ini berisi script buat **download SEMUA mod sekaligus** dari link resmi (Mo
 
 4. Klik Join Server
 
+> 💡 Mau share cara join ke temen? Ada file undangan siap-pakai di repo ini: **`UNDANGAN.md`** — tinggal share.
+
 ### Info Server
 | Info | Detail |
 |------|--------|
@@ -100,6 +102,10 @@ Repo ini berisi script buat **download SEMUA mod sekaligus** dari link resmi (Mo
 3. Jangan toxic di chat
 4. Boleh PVP dengan persetujuan
 5. Nikmati!
+
+### 💬 Grup WhatsApp
+Punya pertanyaan, masukan, atau laporan? **Gabung grup WhatsApp server:**
+👉 **https://chat.whatsapp.com/JeH2ir0wN5QLCTI8eUOSyQ**
 
 ---
 

@@ -261,6 +261,11 @@ Download `.jar` satu-satu dari link di README (`## Download Links`) → taruh di
   Server auto-nulis UUID yang benar ke `ops.json`. Level: 4=full, 3=moderator (bisa /ban,/kick), 2=builder. Hapus admin: `deop <NamaPemain>`.
 - **Catatan offline-mode:** kalau edit `ops.json` manual, UUID harus **offline-UUID** (hash v3 dari `"OfflinePlayer:"+nama`, bukan UUID premium) — cara RCON otomatis benar.
 
+## Grup WhatsApp (Info & Masukan)
+- Pemain bisa gabung grup WhatsApp server buat tanya-tanya, kasih masukan, atau report bug:
+  👉 **https://chat.whatsapp.com/JeH2ir0wN5QLCTI8eUOSyQ**
+- Link grup ini juga udah disematkan di `README.md` dan file undangan **`UNDANGAN.md`**.
+
 ## Troubleshooting
 
 ### Server tidak bisa start?
