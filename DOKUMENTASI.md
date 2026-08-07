@@ -249,6 +249,18 @@ Download `.jar` satu-satu dari link di README (`## Download Links`) → taruh di
    ```
 4. Client laptop juga wajib pasang mod yang sama
 
+## Admin & Operator (Command)
+- **Admin aktif:** `FAZYeee` (level 4 — satu-satunya OP; ada di `/home/ghozy/Server-Tlaucer/ops.json`).
+- **Non-admin (level 0) otomatis TIDAK bisa command** — cuma OP yang terdaftar di `ops.json` yang bisa eksekusi perintah (`/op`, `/gamemode`, `/give`, `/ban`, dsb).
+- **Whitelist OFF** → semua orang bisa join server.
+- Cara tambah/ubah admin (pakai RCON):
+  ```bash
+  PW=$(docker inspect minecraft-home-server --format '{{range .Config.Env}}{{println .}}{{end}}' | grep -i rcon_password | cut -d= -f2)
+  docker exec minecraft-home-server rcon-cli --host localhost --port 25575 --password "$PW" "op <NamaPemain>"
+  ```
+  Server auto-nulis UUID yang benar ke `ops.json`. Level: 4=full, 3=moderator (bisa /ban,/kick), 2=builder. Hapus admin: `deop <NamaPemain>`.
+- **Catatan offline-mode:** kalau edit `ops.json` manual, UUID harus **offline-UUID** (hash v3 dari `"OfflinePlayer:"+nama`, bukan UUID premium) — cara RCON otomatis benar.
+
 ## Troubleshooting
 
 ### Server tidak bisa start?
