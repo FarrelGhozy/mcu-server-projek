@@ -30,6 +30,7 @@ Download semua file `.jar` berikut, lalu pindahkan ke folder `mods` di laptop ka
 | **JEI** | `jei-1.20.1-forge-15.20.0.130.jar` | [Download](https://cdn.modrinth.com/data/u6dRKJwZ/versions/RTFeXsvE/jei-1.20.1-forge-15.20.0.130.jar) |
 | **Veinst VeinMiner** | `veinst_veinminer-1.3.0-1.20.1.jar` | [Download](https://edge.forgecdn.net/files/8128/571/veinst_veinminer-1.3.0-1.20.1.jar) |
 | **JourneyMap** | `journeymap-1.20.1-5.10.3-forge.jar` | [Download](https://cdn.modrinth.com/data/lfHFW1mp/versions/r7FWVNCs/journeymap-1.20.1-5.10.3-forge.jar) |
+| **GraveStone** | `gravestone-forge-1.20.1-1.0.35.jar` | [Download](https://cdn.modrinth.com/data/RYtXKJPr/versions/q9kZE5Xo/gravestone-forge-1.20.1-1.0.35.jar) |
 
 > **Wajib download SEMUA file di atas.** Kalo kurang satu, game bisa crash atau koneksi ditolak.
 >
@@ -76,7 +77,7 @@ Download semua file `.jar` berikut, lalu pindahkan ke folder `mods` di laptop ka
 | **Difficulty** | Normal |
 | **Max Players** | 30 |
 | **PVP** | Aktif |
-| **Mods** | Mekanism + Generators + Tools + JEI + Veinst + JourneyMap |
+| **Mods** | Mekanism + Generators + Tools + JEI + Veinst + JourneyMap + GraveStone |
 
 ### Aturan Server
 1. Jangan cheat / x-ray

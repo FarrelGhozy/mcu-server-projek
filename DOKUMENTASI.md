@@ -20,12 +20,12 @@
 |------|--------|
 | **Host** | Linux (Docker) |
 | **Container** | `itzg/minecraft-server:latest` |
-| **Server Type** | Forge 1.20.1 + Mekanism + JEI + Veinst + JourneyMap |
+| **Server Type** | Forge 1.20.1 + Mekanism + JEI + Veinst + JourneyMap + GraveStone |
 | **Memory** | 4GB (4096M) |
 | **Port** | 200 (host) → 25565 (container) |
 | **Mode** | Offline (Tlaucer) |
 | **Directory** | `/home/ghozy/Server-Tlaucer` |
-| **Mods** | Mekanism + Generators + Tools + JEI + Veinst + JourneyMap |
+| **Mods** | Mekanism + Generators + Tools + JEI + Veinst + JourneyMap + GraveStone |
 
 ## Management Commands
 
@@ -196,13 +196,13 @@ Bisa lewat 2 cara (pilih salah satu):
 
 **Cara A — env di `docker-compose.yml`** (lebih awet, dipakai ulang tiap recreate):
 ```yaml
-MOTD: "§l§bMCU · §r§fMinicraft UNIDA\n§7Forge 1.20.1 · Mekanism + JEI + Veinst + JourneyMap\n§fPVP aktif · §eMax 30 · §b§llocalhost:2000"
+MOTD: "§l§bMCU · §r§fMinicraft UNIDA\n§7Forge 1.20.1 · Mekanism + JEI + Veinst + JourneyMap + GraveStone\n§fPVP aktif · §eMax 30 · §b§llocalhost:2000"
 ```
 Lalu: `docker compose up -d` (recreate supaya env kebaca)
 
 **Cara B — langsung di `server.properties`:**
 ```properties
-motd=§l§bMCU · §r§fMinicraft UNIDA\n§7Forge 1.20.1 · Mekanism + JEI + Veinst + JourneyMap\n§fPVP aktif · §eMax 30 · §b§llocalhost:2000
+motd=§l§bMCU · §r§fMinicraft UNIDA\n§7Forge 1.20.1 · Mekanism + JEI + Veinst + JourneyMap + GraveStone\n§fPVP aktif · §eMax 30 · §b§llocalhost:2000
 ```
 Lalu: `docker compose restart minecraft-server`
 
