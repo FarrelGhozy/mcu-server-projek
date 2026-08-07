@@ -288,10 +288,10 @@ docker compose logs --tail=20 minecraft-server
 ### Cara Pakai Mod
 
 **Veinst VeinMiner**:
-- **Controls → Key Binds → Cari "Veinminer" → Set "Veinminer Key"** (misal: `V`, `G`, `~`)
-- **Hold tombol itu + mine** — vein mining tanpa enchant
-- Support batu, ore, kayu, dan semua block
-- Bisa diatur via tombol "Veinminer Menu Key"
+- ⚠️ **Wajib punya enchant `` "Veinmining" ``** di tool kamu (tabel enchant / buku / villager). Config server `maxBlocksBase=0` → tanpa enchant, vein mining = 0 blok (tidak jalan!). Level maks 5, ±50 blok/level.
+- TAHAN **Veinminer Key** (default: `` ` ``) sambil mine — vein mining semua blok yang nyambung.
+- **Hanya vein mining: bijih/ore (pakai belatih) + log kayu (pakai kapak)** sesuai config server (`#c:ores`, `#forge:ores`, `#minecraft:logs`). Batu biasa/kerikil/tanah tidak ke-vein.
+- Ganti tombol: **Controls → Key Binds → cari "Veinminer"**; menu setting lewat **"Veinminer Menu Key"**.
 
 **JourneyMap**:
 - Tekan `J` — fullscreen map

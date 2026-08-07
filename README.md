@@ -54,10 +54,11 @@ Repo ini berisi script buat **download SEMUA mod sekaligus** dari link resmi (Mo
 ### 3. Cara Pakai Mod Penting
 
 **Veinst VeinMiner**:
-- **Controls → Key Binds → Cari "Veinminer" → Set "Veinminer Key"** (misal: `V`, `G`, atau `~`)
-- **Hold tombol itu + mine** untuk vein mining semua blok yang nyambung
-- Support batu, ore, kayu, dan block lain
-- Bisa buka menu setting via tombol "Veinminer Menu Key"
+- ⚠️ **Wajib punya enchant `` \"Veinmining\" ``** di tool kamu (bisa lewat tabel enchant / buku / villager). Config server `maxBlocksBase=0` → **tanpa enchant, vein mining = 0 blok (gak jalan!)**. Maks level 5, ~50 blok/level.
+- Tahan **Veinminer Key** (default: `` ` ``) sambil mine — vein mining blok yang nyambung.
+- **Hanya bisa vein mining: BIJIH (ore, pakai belatik) + LOG KAYU (pakai kapak)** — sesuai config server (`#c:ores`, `#forge:ores`, `#minecraft:logs`). Batu biasa/tanah TIDAK ke-vein.
+- Ganti tombol: **Controls → Key Binds → cari "Veinminer"** → set "Veinminer Key" & "Veinminer Menu Key".
+- Buka menu setting via **"Veinminer Menu Key"** (default: `]`) — buat toggle alat & jumlah blok.
 
 **JourneyMap**:
 - Tekan `J` — buka fullscreen map
