@@ -56,18 +56,25 @@ Download semua file `.jar` berikut, lalu pindahkan ke folder `mods` di laptop ka
 
 ### 4. Join Server
 1. Buka Minecraft dari TLauncher (pastiin pilih **Forge 1.20.1**)
-2. Multiplayer → Direct Connection
-3. Masukkan alamat server: **`192.168.9.200:25565`**
+2. Multiplayer → Direct Connection (atau Add Server)
+3. Masukkan alamat server **sesuai lokasi kamu**:
+
+| Lokasi Kamu | Alamat Server |
+|---|---|
+| **Di dalam kampus UNIDA** (Wi-Fi / kabel kampus) | **`172.20.20.200:200`** |
+| **Di luar kampus UNIDA** (internet bebas, dari mana saja) | **`103.195.19.115:200`** |
+| **Di laptop/server host itu sendiri** | `localhost:200` |
+
 4. Klik Join Server
 
 ### Info Server
 | Info | Detail |
 |------|--------|
-| **Address** | `192.168.9.200:25565` |
+| **Address** | `172.20.20.200:200` (kampus UNIDA) · `103.195.19.115:200` (luar kampus) |
 | **Version** | Forge **1.20.1** |
 | **Mode** | Survival |
 | **Difficulty** | Normal |
-| **Max Players** | 20 |
+| **Max Players** | 30 |
 | **PVP** | Aktif |
 | **Mods** | Mekanism + Generators + Tools + JEI + Veinst + JourneyMap |
 
@@ -80,4 +87,4 @@ Download semua file `.jar` berikut, lalu pindahkan ke folder `mods` di laptop ka
 
 ---
 
-**Host:** 192.168.9.200:25565
+**Host:** `172.20.20.200:200` (kampus UNIDA) · `103.195.19.115:200` (luar kampus) · `localhost:200` (host)

@@ -3,8 +3,8 @@
 ## Project Info
 - **Server:** Minecraft Forge 1.20.1 + Mekanism + JEI + Veinst VeinMiner + JourneyMap (offline-mode/Tlaucer)
 - **Setup:** Docker Compose
-- **Port:** 25565 (Minecraft) · 25575 (RCON)
-- **Akses:** IP Lokal Server (contoh: `192.168.x.x:25565`)
+- **Port:** 200 (Minecraft) · 25575 (RCON)
+- **Akses:** `localhost:200` (dari host server) · pemain lain pakai IP server (`hostname -I`)
 - **Directory:** `/home/ghozy/Server-Tlaucer`
 - **Memory:** 4GB (4096M)
 
@@ -62,11 +62,14 @@ docker compose restart minecraft-server
 - **Function:** Remote console via CLI
 
 ## Connection Info
-- **Minecraft:** `{IP_SERVER}:25565` (Tlaucer, offline mode)
-- Cek IP server: `ip a | grep 192.168`
+- **Minecraft** (Tlaucer, offline mode):
+  - Dalam kampus UNIDA: `172.20.20.200:200`
+  - Luar kampus UNIDA (dari mana saja): `103.195.19.115:200`
+  - Host server: `localhost:200`
+- Cek IP LAN server: `hostname -I` · Cek IP publik: `curl ifconfig.me`
 
 ## Catatan Penting
-- Server ini untuk **jaringan lokal** — semua pemain harus dalam Wi-Fi/network yang sama
+- Akses server: dalam kampus UNIDA `172.20.20.200:200`, luar kampus `103.195.19.115:200`, host `localhost:200` — pemain wajib bisa menjangkau alamat tersebut
 - Setiap client **wajib pasang mod yang sama** di folder `.minecraft/mods/`
 - Mod hanya untuk Forge **1.20.1** — cek kompatibilitas sebelum download
 - File `.env` berisi konfigurasi yang bisa diubah tanpa edit docker-compose.yml

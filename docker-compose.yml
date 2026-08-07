@@ -3,7 +3,7 @@ services:
     image: itzg/minecraft-server:latest
     container_name: minecraft-home-server
     ports:
-      - "25565:25565"
+      - "200:25565"
     environment:
       EULA: "TRUE"
       ONLINE_MODE: "false"
@@ -15,7 +15,8 @@ services:
       GAMEMODE: "0"
       PVP: "true"
       ALLOW_FLIGHT: "false"
-      MAX_PLAYERS: "20"
+      MAX_PLAYERS: "30"
+      MOTD: "§l§bMCU · §r§fMinicraft UNIDA\n§7Forge 1.20.1 · Mekanism + JEI + Veinst + JourneyMap\n§fPVP aktif · §eMax 30 · §b§llocalhost:2000"
       ENABLE_RCON: "true"
       RCON_PASSWORD: "mcusiman123"
       RCON_PORT: "25575"
