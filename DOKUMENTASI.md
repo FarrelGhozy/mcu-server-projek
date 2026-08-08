@@ -9,7 +9,8 @@
                                                      ┌─────────────────┐
                                                      │ Forge 1.20.1    │
                                                      │ + Mekanism      │
-                                                     │ + JEI           │
+                                                     │ + Create        │
+                                                      │ + JEI           │
                                                       │ + Veinst     │
                                                       └─────────────────┘
 ```
@@ -20,12 +21,12 @@
 |------|--------|
 | **Host** | Linux (Docker) |
 | **Container** | `itzg/minecraft-server:latest` |
-| **Server Type** | Forge 1.20.1 + Mekanism + JEI + Veinst + JourneyMap + GraveStone |
+| **Server Type** | Forge 1.20.1 + Mekanism + Create + Create Garnished + JEI + Veinst + JourneyMap + GraveStone |
 | **Memory** | 4GB (4096M) |
 | **Port** | 200 (host) → 25565 (container) |
 | **Mode** | Offline (Tlaucer) |
 | **Directory** | `/home/ghozy/Server-Tlaucer` |
-| **Mods** | Mekanism + Generators + Tools + JEI + Veinst + JourneyMap + GraveStone |
+| **Mods** | Mekanism + Generators + Tools + Create + Create Garnished + JEI + Veinst + JourneyMap + GraveStone |
 
 ## Management Commands
 
@@ -86,7 +87,10 @@ ss -tlnp | grep :200
 │   ├── cloth-config-11.1.136-forge.jar
 │   ├── jei-1.20.1-forge-15.20.0.130.jar
 │   ├── veinst_veinminer-1.3.0-1.20.1.jar
-│   └── journeymap-1.20.1-5.10.3-forge.jar
+│   ├── journeymap-1.20.1-5.10.3-forge.jar
+│   ├── gravestone-forge-1.20.1-1.0.35.jar
+│   ├── create-1.20.1-6.0.8.jar
+│   └── garnished-2.1.7.b+1.20.1-neoforged.jar
 ├── config/                  # Config mod (auto-generated)
 ├── defaultconfigs/          # Default config mod
 ├── libraries/               # Library Forge
@@ -196,13 +200,13 @@ Bisa lewat 2 cara (pilih salah satu):
 
 **Cara A — env di `docker-compose.yml`** (lebih awet, dipakai ulang tiap recreate):
 ```yaml
-MOTD: "§l§bMCU · §r§fMinicraft UNIDA\n§7Forge 1.20.1 · Mekanism + JEI + Veinst + JourneyMap + GraveStone\n§fPVP aktif · §eMax 30 · §b§llocalhost:2000"
+MOTD: "§l§bMCU · §r§fMinicraft UNIDA\n§7Forge 1.20.1 · Mekanism + Create + JEI + Veinst + JourneyMap + GraveStone\n§fPVP aktif · §eMax 30 · §b§llocalhost:2000"
 ```
 Lalu: `docker compose up -d` (recreate supaya env kebaca)
 
 **Cara B — langsung di `server.properties`:**
 ```properties
-motd=§l§bMCU · §r§fMinicraft UNIDA\n§7Forge 1.20.1 · Mekanism + JEI + Veinst + JourneyMap + GraveStone\n§fPVP aktif · §eMax 30 · §b§llocalhost:2000
+motd=§l§bMCU · §r§fMinicraft UNIDA\n§7Forge 1.20.1 · Mekanism + Create + JEI + Veinst + JourneyMap + GraveStone\n§fPVP aktif · §eMax 30 · §b§llocalhost:2000
 ```
 Lalu: `docker compose restart minecraft-server`
 
@@ -227,7 +231,7 @@ Cara paling gampang buat client/pemain pasang mod — tinggal jalanin 1 script, 
 | **Windows** | `download_mod.bat` | klik 2× / di cmd: `download_mod.bat` (folder kustom: `download_mod.bat C:\\path\\folder`) |
 
 **Cara kerja & syarat:**
-- Script bikin folder `mods/` (di folder script kalau gak dikasih argumen) lalu **download 9 mod** (Mekanism Core/Generators/Tools, Architectury, Cloth, JEI, Veinst, JourneyMap, GraveStone) dari Modrinth/CurseForge resmi. LightAura bukan ikut (client-only opsional — download manual dari README).
+- Script bikin folder `mods/` (di folder script kalau gak dikasih argumen) lalu **download 11 mod** (Mekanism Core/Generators/Tools, Architectury, Cloth, JEI, Veinst, JourneyMap, GraveStone, Create, Create Garnished) dari Modrinth/CurseForge resmi. LightAura bukan ikut (client-only opsional — download manual dari README).
 - **Windows**: butuh `curl` (bawaan Windows 10/11). Kalau `curl` gak ada, script otomatis fallback ke PowerShell `Invoke-WebRequest`.
 - **Linux**: butuh `curl`. Debian/Ubuntu: `sudo apt install curl`.
 - Validasi otomatis: file yang akhirnya ke-download harus >100KB dan dikasih status `OK`, selain itu `GAGAL` + file bersih (dihapus).
@@ -303,6 +307,18 @@ docker compose logs --tail=20 minecraft-server
 - `R` = lihat recipe item
 - `U` = lihat kegunaan item
 - Search bar di kiri untuk cari item
+
+**Create** (teknologi mekanik & otomasi):
+- **Ponder** — arahkan kursor ke item/block lalu tahan **`W`** untuk lihat animasi tutorial cara kerja tiap komponen (belt, shaft, gearbox, water wheel, dsb).
+- Create 6.0.8 **all-in-one** — Ponder, Flywheel, Registrate ke-embed di dalam JAR (tidak perlu mod tambahan).
+- Tools: **Wrench** (konfigurasi/arah blok), **Goggles** (info stress & kecepatan mesin).
+- Sumber tenaga awal: **Water Wheel / Windmill** → shaft → gearbox → belt.
+- 👉 **Create Garnished** butuh Create — pasang dua-duanya.
+
+**Create Garnished** (addon makanan & bahan Create):
+- Makanan & bahan baru (cashew, almond, walnut, dsb.) yang diolah pakai mesin Create.
+- Semua recipe lihat di **JEI** (tekan `R`).
+- Wajib Create terpasang.
 
 **LightAura** (client-only):
 - Pasang di laptop masing-masing (tidak di server)

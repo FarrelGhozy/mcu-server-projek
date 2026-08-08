@@ -1,6 +1,6 @@
 # Minecraft Home Server — Tlaucer
 
-Selamat datang di server Minecraft lokal! Server ini pakai **Forge 1.20.1 + Mekanism + JEI + Veinst VeinMiner + GraveStone**. Semua pemain harus pasang mod yang sama biar bisa join.
+Selamat datang di server Minecraft lokal! Server ini pakai **Forge 1.20.1 + Mekanism + Create + JEI + Veinst VeinMiner + GraveStone**. Semua pemain harus pasang mod yang sama biar bisa join.
 
 ## Cara Join
 
@@ -46,6 +46,8 @@ Repo ini berisi script buat **download SEMUA mod sekaligus** dari link resmi (Mo
 | **Veinst VeinMiner** | `veinst_veinminer-1.3.0-1.20.1.jar` | [Download](https://edge.forgecdn.net/files/8128/571/veinst_veinminer-1.3.0-1.20.1.jar) |
 | **JourneyMap** | `journeymap-1.20.1-5.10.3-forge.jar` | [Download](https://cdn.modrinth.com/data/lfHFW1mp/versions/r7FWVNCs/journeymap-1.20.1-5.10.3-forge.jar) |
 | **GraveStone** | `gravestone-forge-1.20.1-1.0.35.jar` | [Download](https://cdn.modrinth.com/data/RYtXKJPr/versions/q9kZE5Xo/gravestone-forge-1.20.1-1.0.35.jar) |
+| **Create** | `create-1.20.1-6.0.8.jar` | [Download](https://cdn.modrinth.com/data/LNytGWDc/versions/8amzvn9x/create-1.20.1-6.0.8.jar) |
+| **Create Garnished** | `garnished-2.1.7.b+1.20.1-neoforged.jar` | [Download](https://cdn.modrinth.com/data/6e2SlzR4/versions/tO2irH8t/garnished-2.1.7.b%2B1.20.1-neoforged.jar) |
 
 > **Wajib download SEMUA file di atas.** Kalo kurang satu, game bisa crash atau koneksi ditolak.
 >
@@ -71,6 +73,19 @@ Repo ini berisi script buat **download SEMUA mod sekaligus** dari link resmi (Mo
 - Tekan `U` di atas item untuk lihat kegunaan
 - Bisa nyari item di panel kiri
 
+**Create** (teknologi mekanik & mesin otomasi):
+- Belajar dari dalam game: **Ponder** — arahkan kursor ke item/block lalu tahan **`W`** untuk lihat animasi tutorial cara kerja tiap komponen (belt, shaft, gearbox, water wheel, dsb).
+- **0.5.1+** — Create 6.0.8 sudah **all-in-one** (Ponder, Flywheel, Registrate udah ke-embed di dalam JAR-nya, gak perlu install tambahan).
+- Tools utama: **Wrench** (ubah arah/konfigurasi blok), **Goggles** (lihat info stress/kecepatan saat lihat mesin).
+- Mulai dari **Water Wheel / Windmill** buat sumber stress, terus pasang shaft → gearbox → belt ke mesinmu.
+- 👉 **Create Garnished** (di bawah) butuh Create — jadi pasang dua-duanya.
+
+**Create Garnished** (addon makanan & bahan Create):
+- Tambahan makanan & bahan baru (cashew, almond, walnut, dsb.) yang diolah pakai mesin Create.
+- Semua recipe bisa dicek di **JEI** (tekan `R` di item).
+- Wajib Create terpasang (sudah disediakan di atas).
+- Lagi ngembangin: bahan & makanan campuran, masakan + bumbu.
+
 ### 4. Join Server
 1. Buka Minecraft dari TLauncher (pastiin pilih **Forge 1.20.1**)
 2. Multiplayer → Direct Connection (atau Add Server)
@@ -95,7 +110,7 @@ Repo ini berisi script buat **download SEMUA mod sekaligus** dari link resmi (Mo
 | **Difficulty** | Normal |
 | **Max Players** | 30 |
 | **PVP** | Aktif |
-| **Mods** | Mekanism + Generators + Tools + JEI + Veinst + JourneyMap + GraveStone |
+| **Mods** | Mekanism + Generators + Tools + Create + Create Garnished + JEI + Veinst + JourneyMap + GraveStone |
 
 ### Aturan Server
 1. Jangan cheat / x-ray

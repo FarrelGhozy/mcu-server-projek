@@ -16,7 +16,7 @@ services:
       PVP: "true"
       ALLOW_FLIGHT: "false"
       MAX_PLAYERS: "30"
-      MOTD: "§l§bMCU · §r§fMinicraft UNIDA\n§7Forge 1.20.1 · Mekanism + JEI + Veinst + JourneyMap + GraveStone\n§fPVP aktif · §eMax 30 · §b§llocalhost:2000"
+      MOTD: "§l§bMCU · §r§fMinicraft UNIDA\n§7Forge 1.20.1 · Mekanism + Create + JEI + Veinst + JourneyMap + GraveStone\n§fPVP aktif · §eMax 30 · §b§llocalhost:2000"
       ENABLE_RCON: "true"
       RCON_PASSWORD: "mcusiman123"
       RCON_PORT: "25575"

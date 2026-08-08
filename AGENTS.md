@@ -1,7 +1,7 @@
 # AGENTS.md — Minecraft Home Server (Tlaucer)
 
 ## Project Info
-- **Server:** Minecraft Forge 1.20.1 + Mekanism + JEI + Veinst VeinMiner + JourneyMap + GraveStone (offline-mode/Tlaucer)
+- **Server:** Minecraft Forge 1.20.1 + Mekanism + Create + Create Garnished + JEI + Veinst VeinMiner + JourneyMap + GraveStone (offline-mode/Tlaucer)
 - **Setup:** Docker Compose
 - **Port:** 200 (Minecraft) · 25575 (RCON)
 - **Akses:** `localhost:200` (dari host server) · pemain lain pakai IP server (`hostname -I`)
@@ -51,7 +51,7 @@ tar -czf backups/world-$(date +%Y%m%d-%H%M%S).tar.gz world
 
 ### Add Mod
 ```bash
-# Cara cepat: auto-download semua mod (9 file) dari link resmi ke folder mods/
+# Cara cepat: auto-download semua mod (11 file) dari link resmi ke folder mods/
 bash download_mod.sh <folder>     # Linux/macOS  (tanpa argumen = folder mods/ di folder script)
 download_mod.bat <folder>         # Windows      (klik 2× jika tanpa folder custom)
 

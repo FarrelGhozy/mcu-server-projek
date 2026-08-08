@@ -4,7 +4,7 @@ Halo bro/sis! 🤙
 
 Gue ngundang lo buat gabung di server Minecraft kita — **MCU · Minicraft UNIDA**!
 
-Server **Forge 1.20.1 (TLauncher)** · PVP aktif · max 30 player · lengkap pakai mod (Mekanism, JEI, JourneyMap, GraveStone, dll) — mati gak perlu takut item ilang, ada **batu nisan** yang nyimpen item lo. 🪦
+Server **Forge 1.20.1 (TLauncher)** · PVP aktif · max 30 player · lengkap pakai mod (Mekanism, Create, JEI, JourneyMap, GraveStone, dll) — mati gak perlu takut item ilang, ada **batu nisan** yang nyimpen item lo. 🪦
 
 ---
 
@@ -26,7 +26,7 @@ Server **Forge 1.20.1 (TLauncher)** · PVP aktif · max 30 player · lengkap pak
    - **Otomatis (disarankan):** download script dari repo GitHub → `https://github.com/FarrelGhozy/mcu-server-projek`
      - **Windows:** download **`download_mod.bat`** → klik 2× → semua mod ke-download otomatis
      - **Linux/macOS:** download **`download_mod.sh`** → jalankan `bash download_mod.sh`
-   - **Manual:** download 9 file `.jar` (link ada di README repo) → taruh di folder `mods` TLauncher
+   - **Manual:** download **11 file `.jar`** (link ada di README repo) → taruh di folder `mods` TLauncher
 4. Buka game → **Multiplayer → Direct Connection** → masukkan alamat sesuai lokasi di atas → **Join Server**
 5. Main! 🧱⛏️
 
@@ -37,6 +37,8 @@ Server **Forge 1.20.1 (TLauncher)** · PVP aktif · max 30 player · lengkap pak
 | Mod | Fungsi |
 |---|---|
 | **Mekanism** (Core/Generators/Tools) | Teknologi & mesin canggih |
+| **Create** | Mesin otomasi mekanik — belt, gear, water wheel, kereta, dll. |
+| **Create Garnished** | Addon makanan & bahan baru buat Create (cashew, almond, walnut) |
 | **JEI** | Lihat resep crafting semua item |
 | **Veinst VeinMiner** | Mining 1 blok → satu urat batu langsung habis |
 | **JourneyMap** | Peta mini & waypoint |
